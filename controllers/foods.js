@@ -53,19 +53,16 @@ router.get('/:itemId/edit', async (req, res) => {
 
 router.put('/:itemId', async (req, res) => {
     try {
-    console.log('Item ID from URL:', req.params.itemId);
 
     const modUser = await User.findById(req.session.user._id)
-    console.log('User pantry:', modUser.pantry);
 
     const food = modUser.pantry.id(req.params.itemId);
-    console.log('Food found:', food);
 
     food.set(req.body);
     await modUser.save();
     res.redirect(`/users/${modUser._id}/foods`);
 } catch (error) {
-    console.log ('UPDATE ERROR:', error);
+    console.log(error);
     res.redirect('/');
  }
 });
