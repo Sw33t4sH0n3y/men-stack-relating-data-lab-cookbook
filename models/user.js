@@ -8,7 +8,7 @@ const foodSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['fruit', 'vegetable', 'grain', 'dairy', 'protein','other'],
+    enum: ['fruit', 'vegetable', 'grain', 'dairy', 'protein', 'beverage', 'other'],
     required: true
   },
   calories: {
@@ -32,7 +32,7 @@ const foodSchema = new mongoose.Schema({
   }
 });
 
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,

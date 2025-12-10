@@ -1,0 +1,31 @@
+<% include('../partials/_navbar.ejs') %>
+<h1><%= userProfile.username %>'s Pantry</h1>
+
+<% if (userProfile.pantry.length > 0) { %>
+    <ul>
+        <% userProfile.pantry.forEach(food => { %>
+         <li>
+            <strong><%= food.name %></strong> - <%= food.category%>
+            <br>
+            Calories: <%= food.calories %>
+
+            <% if (food.nutrients) { %>
+            <br>
+            Protein: <%= food.nutrients.protein || 0 %>g |
+            Carbs: <%= food.nutrients.carbs || 0 %>g |
+            Fat: <%= food.nutrients.fat || 0 %>g |
+            Fiber: <%= food.nutrients.fiber || 0 %>g |
+          <% } %>
+
+          <% if (food.description) { %>
+            <br>
+            <%= food.description %>
+          <% } %>
+         </li>   
+        <% }) %>
+    </ul>
+   <% } else { %>
+    <p>This pantry is bone dry.</p>
+  <% } %>
+
+  <a href="/users"> Back to Vibe Tribe</a>

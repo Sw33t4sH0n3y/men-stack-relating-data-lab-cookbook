@@ -1,0 +1,85 @@
+<%- include('../partials/_navbar.ejs') %> 
+<h1>Add New Food</h1>
+
+<form action="/users/<%= user._id %>/foods/<%= food._id %>?_method=PUT" method="POST">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" 
+      value="<%= food.name %>" required>
+
+    <label for="category">Category:</label>
+    <select id="category" name="category" required>
+        <option value="">-- Select --</option>
+
+        <option value="fruit" <%= food.category ===
+        'fruit' ? 'selected' : '' %>>Fruit</option>
+        <option value="vegetable" <%= food.category === 
+        'vegetable' ? 'selected' : '' %>>Vegetable</option>
+        <option value="grain" <%= food.category ===
+        'grain' ? 'selected' : '' %>>Grain</option>
+        <option value="dairy" <%= food.category === 
+        'dairy' ? 'selected' : '' %>>Dairy</option>
+        <option value="protein" <%= food.category === 
+        'protein' ? 'selected' : '' %>>Protein</option>
+        <option value="beverage" <%= food.category === 
+        'beverage' ? 'selected' : '' %>>Beverage</option>
+        <option value="other" <%= food.category === 
+        'other' ? 'selected' : '' %>>Other</option>
+    </select>
+    
+    <label for="calories">Calories:</label>
+    <input type="number" id="calories" name="calories" 
+     min="0" value="<%= food.calories %>">
+
+     <fieldset>
+        <legend>Nutrients</legend>
+
+        <label for="protein">Protein (g)</label>
+        <input type="number" id="protein" name="nutrients[protein]"
+         min="0" value="<%= food.nutrients?.protein || 0 %>">
+
+        <label for="carbs">Carbs (g)</label>
+        <input type="number" id="carbs" name="nutrients[carbs]"
+         min="0" value="<%= food.nutrients?.carbs || 0 %>">
+
+        <label for="fat">fat (g)</label>
+        <input type="number" id="fat" name="nutrients[fat]"
+         min="0" value="<%= food.nutrients?.fat || 0 %>">
+
+        <label for="fiber">Fiber (g)</label>
+        <input type="number" id="fiber" name="nutrients[fiber]"
+         min="0" value="<%= food.nutrients?.fiber || 0 %>">
+</fieldset>
+
+<fieldset>
+  <legend>Serving Size</legend>
+
+  <label for="amount">Amount:</label>
+  <input type="number" id="amount" name="ServingSize[amount]" 
+   min="0" value="<%= food.ServingSize?.amount || '' %>">
+
+  <label for="unit">Unit:</label>
+  <select id="unit" name="ServingSize[unit]">
+        <option value="g"> <%= food.ServingSize?.unit ===
+        'g' ? 'selected' : '' %>>g</option>
+        <option value="oz"> <%= food.ServingSize?.unit === 
+        'oz' ? 'selected' : '' %>>oz</option>
+        <option value="ml"><%= food.ServingSize?.unit ===
+        'ml' ? 'selected' : '' %>>ml</option>
+        <option value="cup"><%= food.ServingSize?.unit === 
+        'cup' ? 'selected' : '' %>>cup</option>
+        <option value="tsp"><%= food.ServingSize?.unit === 
+        'tsp' ? 'selected' : '' %>>tsp</option>
+        <option value="tbsp"><%= food.ServingSize?.unit === 
+        'tbsp' ? 'selected' : '' %>>tbsp</option>
+  </select>
+</fieldset>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" 
+      maxlength=100></textarea>
+
+    <button type="submit">Confirm</button>  
+</form>
+
+<a href="/users/<%= user._id %>/foods">Cancel</a>
