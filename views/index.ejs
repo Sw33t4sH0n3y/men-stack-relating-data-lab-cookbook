@@ -41,21 +41,22 @@
       <input type="text" placeholder="e.g., Jollof Rice Supreme" />
     </div>
 
-    <div class="form-group form-row">
-</div>
-<label>Time</label>
-<input type="text" placeholder="45 min" />
-</div>
-<div>
-  <label>Servings</label>
-  <input type="text" placeholder="6 plates" />
+  <div class="form-group form-row">
+    <div>
+<label for="time">Time</label>
+<input type="text" id="time" name="time" placeholder="45 min" />
 </div>
 <div>
-  <label>Difficulty</label>
-  <select>
-    <option>Easy</option>
-    <option>Medium</option>
-    <option>Difficult</option>
+  <label for="servings">Servings</label>
+  <input type="text" id="servings" name="servings" placeholder="6 plates" />
+</div>
+<div>
+  <label for="difficulty">Difficulty</label>
+  <select id="difficulty" name="difficulty">
+    <option value="">-- Select --</option>
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="difficult">Difficult</option>
   </select>
 </div>
 </div>
