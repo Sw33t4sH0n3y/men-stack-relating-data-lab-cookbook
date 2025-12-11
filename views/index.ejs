@@ -3,10 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Pantry</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Spice Me Up</title>
   </head>
   <body>
     <%- include('./partials/_navbar.ejs') %>
-    <h1>Welcome to my Pantry</h1>
-  </body>
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="glow-orb glow-orb-3"></div>
+
+  <header>
+    <div class="header-card">
+    <div class=" header-glow"></div>
+    <div class=" header-content">
+     <h1>Sultry Simmering Recipes that flirt with your taste buds!</h1>
+     <div class="header-divider">
+      <div class="header-line"></div>
+      <p>A Global Foodgasm</p>
+      <div class="header-line"></div>
+    </div>
+    </div>
+    </div>
+  </div>
+  </header>
+  <main class="star-container">
+    <div class="panel">
+      <div class="panel-glow panel-glow-prp"></div>
+      <div class="panel-content">
+      <div class="hover-header hover-header-prp">
+      <div class="hover-header-inner">
+      <div class="hover-header-glow hover-header-glow-prp"></div>
+      <h2>✦ Recipe Editor</h2>  
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Reciple Title</label>
+      <input type="text" placeholder="e.g., Jollof Rice Supreme" />
+    </div>
+
+    <div class="form-group form-row">
+</div>
+<label>Time</label>
+<input type="text" placeholder="45 min" />
+</div>
+<div>
+  <label>Servings</label>
+  <input type="text" placeholder="6 plates" />
+</div>
+<div>
+  <label>Difficulty</label>
+  <select>
+    <option>Easy</option>
+    <option>Medium</option>
+    <option>Difficult</option>
+  </select>
+</div>
+</div>
+
+<div class="form-group">
+  <label>Ingredients (one per line)</label>
+  <textarea rows="4" placeholder="2 cups long grain rice&#10;1 can crushed tomatoes&;1 scotch bonnet pepper"></textarea>
+</div>
+
+<div class="form-group">
+  <label>Instructions (one per line)</label>
+  <textarea rows="4" placeholder="Blend tomatoes and Peppers&#10;Saute onions until golden&#10;Add rice and cook until done"></textarea>
+</div>
+
+<div class="form-group">
+  <label>Chef's Hint</label>
+  <input type="text" placeholder="Let the rice rest before serving..." />
+</div>
+<div class="form-group">
+  <label>Tags (comma-seperated)</label>
+  <input type="text" placeholder="West African, Rice, Party Food" />
+</div>
+</div>
+</div>
+
+<div class="panel">
+  <div class="panel-glow panel-glow-abr"></div>
+  <div class="panel-content">
+    <div class="hover-header hover-header-abr">
+      <div class="hover-header-inner">
+        <div class="hover-header-glow hover-header-glow-abr"></div>
+        <h2>✦ Live Preview</h2>
+    </div>
+  </div>
+<article class="recipe-card">
+  <div class="recipe-card-bg"></div>
+
+  <div class="recipe-image">
+    <span>🍲</span>
+  </div>
+
+<div class="recipe-body">
+  <h2 class="recipe-title>Jollof Rice Supreme"></h2>
+  <div class="recipe-title-line"></div>
+
+  <div class="recipe-meta">
+    <span><span class="diamond">◆</span> 45 min</span>
+    <span><span class="diamond">◆</span> 6 plates</span>
+    <span><span class="diamond">◆</span> Medium</span>
+</div>
+<div class="section">
+  <div class="section-header section-header-cyan">
+    <div class="section-header-glow section-header-glow-cyan"></div>
+    <h3>Ingredients</h3>
+</div>
+<ul class="ingredients-list">
+  <li><span class="arrow"> ➤</span> 2 cups long grain rice</li>
+  <li><span class="arrow"> ➤</span> 1 can crushed tomatoes</li>
+  <li><span class="arrow"> ➤</span> 1 scotch bonnet pepper</li>
+  <li><span class="arrow"> ➤</span> 1 large onion, diced</li>
+  <li><span class="arrow"> ➤</span> 2 tbsp tomato paste</li>
+  <li><span class="arrow"> ➤</span> Chicken/Vegetable Stock</li>
+</ul>
+</div>
+
+<div class="section">
+  <div class="section-header section-header-abr">
+    <div class="section-header-glow section-header-glow-abr"></div>
+    <h3>Instructions</h3>
+</div>
+<ol class="order-list">
+  <li>
+    <span class="step-number">1</span>
+    <span class="step-text">Blend tomatoes and peppers until smooth</span>
+  </li>
+  <li>
+    <span class="step-number">2</span>
+    <span class="step-text">Saute onions until golden and fragrant</span>
+  </li>
+    <span class="step-number">3</span>
+    <span class="step-text">Add rice and cook until perfectly done</span>
+</li>
+</ol>
+</div>
+
+<div class="hint-box">
+<div class="hint-box-bg"></div>
+<div class="hint-box-border"></div>
+<p><span class="hint-label">Pro Hint:</span>Let rice rest for 10 minutes before serving for best texture</p>
+</div>
+
+<div class="tags">
+  <span class="tag>West African"></span>
+  <span class="tag">Rice</span>
+  <span class="tag">Party Food></span>
+</div>
+</div>
+</article>
+</div>
+</div>
+  </main>
+  
+</body>
 </html>
